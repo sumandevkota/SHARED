@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 
 # read columns
+names = None
 with open('key.csv','r',encoding='utf-16') as fi:
-    names = None
     for line in fi.readlines():
         names = line.split('\t')
         break
@@ -16,7 +16,7 @@ print(names)
 
 
 df = pd.read_csv('key.csv',skiprows=1,nrows=None,
-                 encoding='utf-16',delimiter='\t',header=None,names=names)
+                encoding='utf-16',delimiter='\t',header=None,names=names)
 
 print(df.shape)
 print(df.head(2).append(df.tail(2)))
